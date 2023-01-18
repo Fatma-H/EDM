@@ -18,7 +18,7 @@ input_dir="/root/EDM/src/test/resources/data/input/liste-acv-com2022-20221118.cs
 env_vars="-Dinput=$input_dir"
 
 # Execute the spark-submit command
-./bin/spark-submit --master $master_url \
+./spark-3.3.1-bin-hadoop3-scala2.13/bin/spark-submit --master $master_url \
                   --deploy-mode $deploy_mode \
                   --executor-cores $executor_cores \
                   --executor-memory $executor_memory \
