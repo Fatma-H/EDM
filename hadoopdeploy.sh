@@ -1,4 +1,11 @@
 #!/bin/bash
+# Format the Namenode(first time)
+./hadoop-3.3.2/bin/hdfs namenode -format
+# Start the namenode and data node
+./hadoop-3.3.2/sbin/start-dfs.sh
+# Start the Yarn resource and nodemanager
+./hadoop-3.3.2/bin/start-yarn.sh
+
 
 # Set the path to the jar file
 JAR_FILE=/home/haadoop/hadoop-3.3.2/EDM/target/Try-1.0-SNAPSHOT.jar
@@ -20,4 +27,4 @@ CONTAINER_MEM=1024
 CONTAINER_VCORES=1
 
 # Submit the application to YARN
-yarn jar $JAR_FILE $MAIN_CLASS -Dmapreduce.job.queuename=$QUEUE  -Dmapreduce.map.memory.mb=$CONTAINER_MEM -Dmapreduce.map.cpu.vcores=$CONTAINER_VCORES -Dmapreduce.job.ubertask.enable=false -Dmapreduce.job.reduces=$NUM_CONTAINERS 
+./hadoop-3.3.2/bin/yarn jar $JAR_FILE $MAIN_CLASS -Dmapreduce.job.queuename=$QUEUE  -Dmapreduce.map.memory.mb=$CONTAINER_MEM -Dmapreduce.map.cpu.vcores=$CONTAINER_VCORES -Dmapreduce.job.ubertask.enable=false -Dmapreduce.job.reduces=$NUM_CONTAINERS 
