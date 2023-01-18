@@ -1,5 +1,8 @@
 #!/bin/bash
-
+#Start the spark master 
+./spark-3.3.1-bin-hadoop3-scala2.13/sbin/start-master.sh
+#start a worker node connected to the master
+./spark-3.3.1-bin-hadoop3-scala2.13/sbin/start-worker.sh fatmah:7077
 # Define the Spark configuration
 master_url="spark://fatmah:7077"
 deploy_mode="client"
