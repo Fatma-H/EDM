@@ -4,8 +4,6 @@ app_jar=/root/EDM/target/Try-1.0-SNAPSHOT.jar
 master_url="spark://fatmah:7077"
 
 # Submit to spark
-mvn install
-
 ./spark-submit \
     --class $main_Class \
     --conf spark.driver.memory=1g \
